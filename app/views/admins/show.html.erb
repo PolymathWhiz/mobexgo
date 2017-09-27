@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+  <a class="navbar-brand" href="#">Mobex '17</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+       <a class="nav-link" href="<%= destroy_admin_session_path %>" data-method="delete" rel="nofollow"> Signout</a>
+      </li>
+    </ul>
+  </div>
+  </nav>
+
+
+  <div class="container">
+  <div class="row">
+    <div class="col-md-2" style="margin-top: 20px;">
+      Males: <span> <%= @males %> </span> <br>
+      Females: <span> <%= @females %> </span>
+    </div>
+    <div class="col-md-9">
+    <%= render 'shared/flash_message' %>
+    <center> <h4 style="margin-top: 20px; margin-bottom: 20px;">Registered Students</h4> </center>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Occupation</th>
+            <th>Nationality</th>
+            <th>Phone number</th>
+          </tr>
+        </thead>
+
+        <tbody>
+         <% @list.each_with_index do |list, count|%>
+          <% count += 1 %>
+          <tr>
+            <th scope="row"> <%= count %> </th>
+            <td> <%= list.full_name %> </td>
+            <td> <%= list.email %> </td>
+            <td> <%= list.occupation %> </td>
+            <td> <%= list.nationality %> </td>
+            <td> <%= list.mobile %> </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+</div>

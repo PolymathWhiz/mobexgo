@@ -1,0 +1,56 @@
+<div class="container">
+  <h2 class="text-center m-t-50" style="color: #1a1165 !important;">MOBEX '17 </h2>
+  <div class="row m-t-40">
+    <div class="col d-flex justify-content-center">
+      <div class="card" style="width: 25rem;">
+        <div class="card-body">
+
+          <%= form_for(@form, url: forms_path) do |f| %>
+          
+            <div class="text-center">
+              <h5 class="text-uppercase" style="margin-bottom: 2px;">Registration Form</h4>
+              <small class="text-muted">Just a minute to send your details</small> <hr>
+            </div> 
+            <%= render 'shared/error_message', object: f.object %>
+            <%= render 'shared/flash_message' %>
+
+            <div class="form-group">
+              <%= f.label :gender %>
+              <%= f.select :title, options_for_select(gender_select), { prompt: "Select Gender" }, class: "form-control" %>
+            </div>
+            
+            <div class="form-group">
+              <%= f.label :full_name %>
+              <%= f.text_field :full_name, class: 'form-control', placeholder: 'Miracle Anyanwu' %>
+            </div>
+                
+            <div class="form-group">
+              <%= f.label :occupation %>
+              <%= f.text_field :occupation, class: 'form-control', placeholder: 'Student' %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :nationality %>
+              <%= f.select :nationality, options_for_select(countries), { prompt: "Select Nationality" }, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :email %>
+              <%= f.email_field :email, class: 'form-control', placeholder: 'johndoe@gmail.com' %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :mobile_number %>
+              <%= f.text_field :mobile, class: 'form-control' %>
+            </div>
+
+            <%= f.submit "Submit", class: 'btn btn-primary btn-block' %>
+            <% end %>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+</div>           
+                
