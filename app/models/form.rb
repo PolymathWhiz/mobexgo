@@ -7,6 +7,7 @@ class Form < ApplicationRecord
   validates_presence_of :full_name, :occupation, :title
   validates :email, uniqueness: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, allow_nil: true
   validates :mobile, format: { with: VALID_MOBILE_REGEX, multiline: true }
+  
 
   private
 

@@ -13,3 +13,12 @@
 //= require jquery
 //= require turbolinks
 //= require_tree .
+
+
+
+window.dataLayer = window.dataLayer || [];
+
+function gtag() { dataLayer.push(arguments) };
+gtag('js', new Date());
+
+gtag('config', 'UA-102233335-3');
