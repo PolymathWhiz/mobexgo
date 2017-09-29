@@ -4,6 +4,7 @@ class AdminsController < ApplicationController
 
   def show
     @list = Form.all
+    @total = @list.count
     @males = Form.where("title = ?", 'Male').count
     @females = Form.where("title = ?", 'Female').count    
   end
