@@ -4,7 +4,7 @@ class Form < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   VALID_MOBILE_REGEX = /^[0-9]{10}$/
 
-  validates_presence_of :full_name, :occupation, :title
+  validates_presence_of :full_name, :occupation, :title, :nationality
   validates :email, uniqueness: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, allow_nil: true
   validates :mobile, format: { with: VALID_MOBILE_REGEX, multiline: true }
   
