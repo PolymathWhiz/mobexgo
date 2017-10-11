@@ -1,5 +1,13 @@
+<style>
+  body {
+    background-image: url('assets/bg.svg');
+    background-size: cover;
+  }
+</style>
+
+
 <div class="container">
-  <h2 class="text-center m-t-50" style="color: #1a1165 !important;">MOBEX '17 </h2>
+  <h2 class="text-center m-t-50 text-white">MOBEX '17 </h2>
   <div class="row m-t-40">
     <div class="col d-flex justify-content-center">
       <div class="card" style="width: 25rem;">
@@ -8,8 +16,7 @@
           <%= form_for(@form, url: forms_path) do |f| %>
           
             <div class="text-center">
-              <h5 class="text-uppercase" style="margin-bottom: 2px;">Registration Form</h4>
-              <small class="text-muted">Just a minute to send your details</small> <hr>
+              <h5 class="text-uppercase" style="margin-bottom: 2px;">Registration Form</h4> <hr>
             </div> 
             <%= render 'shared/error_message', object: f.object %>
             <%= render 'shared/flash_message' %>
@@ -36,7 +43,7 @@
 
             <div class="form-group">
               <%= f.label :email %>
-              <%= f.email_field :email, class: 'form-control', placeholder: 'johndoe@gmail.com' %>
+              <%= f.email_field :email, class: 'form-control', placeholder: 'anyanwumiracle78@gmail.com' %>
             </div>
 
             <div class="form-group">
@@ -44,7 +51,7 @@
               <%= f.text_field :mobile, class: 'form-control', placeholder: '0509289409' %>
             </div>
 
-            <%= f.submit "Submit", class: 'btn btn-primary btn-block' %>
+            <%= f.submit "Submit", class: 'btn btn-success btn-block' %>
             <% end %>
             </div>
           </div>
